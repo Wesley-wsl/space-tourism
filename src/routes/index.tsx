@@ -1,9 +1,13 @@
 import { Route, Switch } from "react-router-dom";
 
-export function Routes() {
+import Home from "../pages/Home";
+
+export const Routes: React.FC = () => {
     return (
         <>
-            <Switch>{/* <Route path="/" exact component={Home} /> */}</Switch>
+            <Switch>
+                <Route path="/" exact component={Home} />
+            </Switch>
         </>
     );
-}
+};
