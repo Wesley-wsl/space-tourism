@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import backgroundDestinationDesktop from "../../assets/destination/background-destination-desktop.jpg";
 import Europa from "../../assets/destination/image-europa.png";
@@ -15,6 +15,17 @@ import { MainContent } from "./styles";
 const Destination: React.FC = () => {
     const [destination, setDestination] = useState("Moon");
     const [planet, setPlanet] = useState(Object);
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    function handleActive(e: any) {
+        const isActive = document.querySelector(".active");
+
+        if (isActive) {
+            isActive.classList.remove("active");
+        }
+
+        e.target.classList.add("active");
+    }
 
     useEffect(() => {
         const planetSelected = data.destinations.filter(
@@ -62,15 +73,35 @@ const Destination: React.FC = () => {
                         <ul>
                             <li
                                 className="active"
-                                onClick={() => setDestination("Moon")}
+                                onClick={e => {
+                                    handleActive(e);
+                                    setDestination("Moon");
+                                }}
                             >
                                 MOON
                             </li>
-                            <li onClick={() => setDestination("Mars")}>MARS</li>
-                            <li onClick={() => setDestination("Europa")}>
+                            <li
+                                onClick={e => {
+                                    handleActive(e);
+                                    setDestination("Mars");
+                                }}
+                            >
+                                MARS
+                            </li>
+                            <li
+                                onClick={e => {
+                                    handleActive(e);
+                                    setDestination("Europa");
+                                }}
+                            >
                                 EUROPA
                             </li>
-                            <li onClick={() => setDestination("Titan")}>
+                            <li
+                                onClick={e => {
+                                    handleActive(e);
+                                    setDestination("Titan");
+                                }}
+                            >
                                 TITAN
                             </li>
                         </ul>
