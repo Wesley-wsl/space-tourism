@@ -33,6 +33,10 @@ export const MainContent = styled.div`
 
         li {
             cursor: pointer;
+
+            &:hover {
+                border-bottom: 2px solid #ffffff69;
+            }
         }
     }
     .active {
