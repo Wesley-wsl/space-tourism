@@ -33,10 +33,13 @@ export const Container = styled.header`
             padding-bottom: 25px;
         }
 
-        li:nth-child(1) {
-            margin-left: 100px;
+        .activeNav {
             padding-bottom: 25px;
             border-bottom: 2px solid #fff;
+        }
+
+        li:nth-child(1) {
+            margin-left: 100px;
             font-family: "Barlow Condensed";
         }
 
@@ -48,7 +51,7 @@ export const Container = styled.header`
 
     .logo {
         margin-left: 50px;
-        padding-top: 23px;
+        padding-top: 12px;
         position: relative;
     }
 
@@ -59,7 +62,7 @@ export const Container = styled.header`
         background-color: #979797;
         opacity: 0.5;
         margin-left: 20px;
-        top: 60%;
+        top: 55%;
         position: absolute;
         z-index: 1;
 
