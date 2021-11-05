@@ -1,17 +1,15 @@
+import { backgroundType } from "../../@types/index";
 import backgroundHomeDesktop from "../../assets/home/background-home-desktop.jpg";
 import Header from "../../components/Header";
-import { Container } from "./styles";
+import { BackgroundContainer } from "../../styles/GlobalStyle";
+import { MainContent } from "./styles";
 
-interface HomeTypes {
-    background: string;
-}
-
-const Home: React.FC<HomeTypes> = () => {
+const Home: React.FC<backgroundType> = () => {
     return (
         <>
-            <Container background={backgroundHomeDesktop}>
+            <BackgroundContainer background={backgroundHomeDesktop}>
                 <Header />
-                <main>
+                <MainContent>
                     <section>
                         <p>SO, YOU WANT TO TRAVEL TO</p>
                         <p>SPACE</p>
@@ -27,8 +25,8 @@ const Home: React.FC<HomeTypes> = () => {
                     <div>
                         <p>EXPLORE</p>
                     </div>
-                </main>
-            </Container>
+                </MainContent>
+            </BackgroundContainer>
         </>
     );
 };
