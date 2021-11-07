@@ -1,10 +1,16 @@
-import React, { useEffect } from "react";
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+import iconClose from "../../assets/shared/icon-close.svg";
+import iconHamburger from "../../assets/shared/icon-hamburger.svg";
 import Logo from "../../assets/shared/logo.svg";
-import { Container } from "./styles";
+import { Container, MenuMobile } from "./styles";
 
 const Header: React.FC = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
     const location = useLocation();
     useEffect(() => {
         const li = document.querySelectorAll("li[data-li]");
@@ -32,8 +38,6 @@ const Header: React.FC = () => {
                 <img src={Logo} alt="space-tourism logo" />
             </div>
 
-            <div className="line" />
-
             <nav>
                 <ul>
                     <li data-li>
@@ -58,6 +62,46 @@ const Header: React.FC = () => {
                     </li>
                 </ul>
             </nav>
+
+            <MenuMobile isOpen={isOpen}>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/">
+                                <span>00</span> HOME
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/destination">
+                                <span>01</span>DESTINATION
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/crew">
+                                <span>02</span>CREW
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/technology">
+                                <span>03</span>TECHNOLOGY
+                            </Link>
+                        </li>
+                    </ul>
+                </nav>
+                {isOpen ? (
+                    <img
+                        src={iconClose}
+                        alt="iconMenuClosed"
+                        onClick={() => setIsOpen(!isOpen)}
+                    />
+                ) : (
+                    <img
+                        src={iconHamburger}
+                        alt="iconMenuHamburger"
+                        onClick={() => setIsOpen(!isOpen)}
+                    />
+                )}
+            </MenuMobile>
         </Container>
     );
 };
