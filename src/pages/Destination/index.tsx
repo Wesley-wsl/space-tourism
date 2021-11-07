@@ -3,29 +3,21 @@
 import React, { useEffect, useState } from "react";
 
 import backgroundDestinationDesktop from "../../assets/destination/background-destination-desktop.jpg";
+import backgroundDestinationMobile from "../../assets/destination/background-destination-mobile.jpg";
+import backgroundDestinationTablet from "../../assets/destination/background-destination-tablet.jpg";
 import Europa from "../../assets/destination/image-europa.png";
 import Mars from "../../assets/destination/image-mars.png";
 import Moon from "../../assets/destination/image-moon.png";
 import Titan from "../../assets/destination/image-titan.png";
 import Header from "../../components/Header";
 import data from "../../services/data.json";
-import { BackgroundContainer } from "../../styles/GlobalStyle";
+import { BackgroundContainer, IntroPage } from "../../styles/GlobalStyle";
+import activeEffect from "../../utils/activeEffect";
 import { MainContent } from "./styles";
 
 const Destination: React.FC = () => {
     const [destination, setDestination] = useState("Moon");
     const [planet, setPlanet] = useState(Object);
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    function handleActive(e: any) {
-        const isActive = document.querySelector(".active");
-
-        if (isActive) {
-            isActive.classList.remove("active");
-        }
-
-        e.target.classList.add("active");
-    }
 
     useEffect(() => {
         const planetSelected = data.destinations.filter(
@@ -36,13 +28,17 @@ const Destination: React.FC = () => {
     }, [destination]);
 
     return (
-        <BackgroundContainer background={backgroundDestinationDesktop}>
+        <BackgroundContainer
+            backgroundDesktop={backgroundDestinationDesktop}
+            backgroundTablet={backgroundDestinationTablet}
+            backgroundMobile={backgroundDestinationMobile}
+        >
             <Header />
             <MainContent>
-                <h2>
+                <IntroPage>
                     <span>01</span>
                     PICK YOUR DESTINATION
-                </h2>
+                </IntroPage>
 
                 <section>
                     <div className="planet">
@@ -74,7 +70,7 @@ const Destination: React.FC = () => {
                             <li
                                 className="active"
                                 onClick={e => {
-                                    handleActive(e);
+                                    activeEffect(e);
                                     setDestination("Moon");
                                 }}
                             >
@@ -82,7 +78,7 @@ const Destination: React.FC = () => {
                             </li>
                             <li
                                 onClick={e => {
-                                    handleActive(e);
+                                    activeEffect(e);
                                     setDestination("Mars");
                                 }}
                             >
@@ -90,7 +86,7 @@ const Destination: React.FC = () => {
                             </li>
                             <li
                                 onClick={e => {
-                                    handleActive(e);
+                                    activeEffect(e);
                                     setDestination("Europa");
                                 }}
                             >
@@ -98,7 +94,7 @@ const Destination: React.FC = () => {
                             </li>
                             <li
                                 onClick={e => {
-                                    handleActive(e);
+                                    activeEffect(e);
                                     setDestination("Titan");
                                 }}
                             >
