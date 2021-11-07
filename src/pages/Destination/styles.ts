@@ -1,20 +1,6 @@
 import styled from "styled-components";
 
 export const MainContent = styled.div`
-    h2 {
-        font-size: 25px;
-        font-family: "Barlow Condensed";
-        margin-left: 166px;
-        margin-top: 30px;
-        margin-bottom: 50px;
-
-        span {
-            color: #d9d9d9d9;
-            font-family: "Barlow Condensed";
-            margin-right: 14px;
-        }
-    }
-
     img {
         width: 350px;
     }
@@ -84,6 +70,68 @@ export const MainContent = styled.div`
         div > p:nth-child(2) {
             font-size: 28px;
             text-transform: uppercase;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        section {
+            flex-direction: column;
+            align-items: center;
+            max-width: 450px;
+            margin: 60px auto;
+
+            img {
+                margin-bottom: 60px;
+                width: 300px;
+                height: 300px;
+            }
+
+            .info ul {
+                width: 350px;
+                margin: 0 auto;
+            }
+
+            .info > .information-planet > p:nth-child(1) {
+                text-align: center;
+                font-size: 80px;
+                margin-bottom: 8px;
+                margin-top: 32px;
+            }
+
+            .info > .information-planet > p:nth-child(2) {
+                text-align: center;
+                font-size: 16px;
+            }
+
+            .data {
+                max-width: 320px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    @media (max-width: 571px) {
+        section {
+            img {
+                width: 170px;
+                height: 170px;
+            }
+
+            .info > .information-planet > p:nth-child(1) {
+                font-size: 56px;
+                margin-bottom: 1px;
+                margin-top: 20px;
+            }
+
+            .info > .information-planet > p:nth-child(2) {
+                font-size: 15px;
+            }
+
+            .data {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
         }
     }
 `;
