@@ -60,4 +60,62 @@ export const MainContent = styled.main`
         text-align: justify;
         color: #d0d6f9;
     }
+
+    @media (max-width: 1000px) {
+        align-items: center;
+        flex-direction: column;
+        max-width: 450px;
+        margin: 170px auto;
+
+        section {
+            margin-bottom: 156px;
+        }
+
+        div {
+            width: 242px;
+            height: 242px;
+            z-index: 0;
+            &:hover:after {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    }
+
+    @media (max-width: 571px) {
+        section {
+            max-width: 327px;
+            margin-bottom: 81px;
+        }
+
+        section > p:nth-child(1),
+        section > p:nth-child(2) {
+            text-align: center;
+        }
+
+        section > p:nth-child(1) {
+            font-size: 16px;
+        }
+        section > p:nth-child(2) {
+            font-size: 80px;
+        }
+        section > p:nth-child(3) {
+            font-size: 15px;
+            text-align: center;
+        }
+
+        div {
+            width: 150px;
+            height: 150px;
+
+            p {
+                font-size: 20px;
+                max-width: 327px;
+            }
+        }
+    }
+
+    @media (max-width: 571px) {
+        margin-top: 80px;
+    }
 `;
