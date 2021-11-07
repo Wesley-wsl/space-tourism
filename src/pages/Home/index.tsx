@@ -1,13 +1,18 @@
-import { backgroundType } from "../../@types/index";
 import backgroundHomeDesktop from "../../assets/home/background-home-desktop.jpg";
+import backgroundHomeMobile from "../../assets/home/background-home-mobile.jpg";
+import backgroundHomeTablet from "../../assets/home/background-home-tablet.jpg";
 import Header from "../../components/Header";
 import { BackgroundContainer } from "../../styles/GlobalStyle";
 import { MainContent } from "./styles";
 
-const Home: React.FC<backgroundType> = () => {
+const Home: React.FC = () => {
     return (
         <>
-            <BackgroundContainer background={backgroundHomeDesktop}>
+            <BackgroundContainer
+                backgroundDesktop={backgroundHomeDesktop}
+                backgroundTablet={backgroundHomeTablet}
+                backgroundMobile={backgroundHomeMobile}
+            >
                 <Header />
                 <MainContent>
                     <section>
