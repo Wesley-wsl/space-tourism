@@ -12,7 +12,7 @@
 
 ## 📜 About the Project
 
-Multi-page space tourism website
+Space-tourism is a fictional website multi-page for a platform for space tourism that aims to share informations about this enterprise.
 
 ### 🛠 Technologies
 
